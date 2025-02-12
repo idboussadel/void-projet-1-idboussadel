@@ -24,7 +24,7 @@ class CostumSlider extends HTMLElement {
     this.innerHTML = `
       <div class="flex gap-[20px] mx-auto max-w-[75rem] items-center">
         <button aria-label="Previous slide" class="prev-btn">
-          <img src="./assets/cercle-arrow.svg" alt="Previous arrow" width="70" height="70" style="transform: rotate(180deg);" />
+      <img src="./assets/cercle-arrow.svg" alt="Previous arrow" class="slider-arrow" style="transform: rotate(180deg);" />
         </button>
 
         <div class="mx-auto overflow-hidden px-5 py-8">
@@ -34,7 +34,7 @@ class CostumSlider extends HTMLElement {
         </div>
 
         <button aria-label="Next slide" class="next-btn">
-          <img src="./assets/cercle-arrow.svg" alt="Next arrow" width="70" height="70" />
+          <img src="./assets/cercle-arrow.svg" alt="Next arrow" class="slider-arrow"/>
         </button>
       </div>
     `;

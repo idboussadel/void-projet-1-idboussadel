@@ -3,3 +3,16 @@
 body {
   font-family: "Open sans", sans-serif;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.slider-arrow {
+  max-width: none;
+  width: 32px;
+  height: 32px;
+}

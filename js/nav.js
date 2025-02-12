@@ -11,7 +11,7 @@ class SecondaryNav extends HTMLElement {
               <img id="menu-btn" src="./assets/menu.svg" class="cursor-pointer hover:opacity-80 md:hidden h-[24px] w-[24px]" alt="menu icon"/>
               <img id="close-menu-btn" src="./assets/close-menu.svg" class="hidden cursor-pointer hover:opacity-80 md:hidden h-[24px] w-[24px]" alt="close menu icon"/>
   
-              <img src="./assets/logo.png" alt="RMA logo" class="pl-6 md:hidden w-[159px]"/>
+              <img src="https://www.rmaassurance.com/img/logo/rma_logo_header.png" alt="RMA logo" class="pl-6 md:hidden w-[159px]"/>
   
               <div class="flex gap-[16px]">
                   <button aria-label="Search">
@@ -34,7 +34,7 @@ class MainNav extends HTMLElement {
           <nav class="max-md:hidden main-nav text-blue-800 p-[20px] font-bold text-[18px]">
               <ul class="flex gap-[40px] items-center">
                   <li>
-                      <img src="./assets/logo.png" alt="RMA logo" class="w-[159px]"/>
+                      <img src="https://www.rmaassurance.com/img/logo/rma_logo_header.png" alt="RMA logo" class="w-[159px]"/>
                   </li>
                   <li>
                   <button aria-expanded="false" aria-controls="dropdown" class="flex items-center gap-[9px]">

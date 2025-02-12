@@ -1,10 +1,3 @@
-import "./js/annuaire.js";
-import "./js/accordion.js";
-import "./js/nav.js";
-import "./js/counter.js";
-import "./js/serviceItem.js";
-import "./js/validate-form.js";
-
 // Costum slider code
 class CostumSlider extends HTMLElement {
   connectedCallback() {
@@ -78,23 +71,23 @@ if (offresSection) {
       JSON.stringify([
         {
           content:
-            "<div><img src='./assets/carousel/car.jpg' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Automobile 1</h3><p class='text-sm'>Protégez votre véhicule avec une assurance automobile adaptée à vos besoins.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
+            "<div><img src='./assets/carousel/car.jpg' alt='Automobile' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Automobile 1</h3><p class='text-sm'>Protégez votre véhicule avec une assurance automobile adaptée à vos besoins.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
         },
         {
           content:
-            "<div><img src='./assets/carousel/familly.png' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Habitation 2</h3><p class='text-sm'>Sécurisez votre domicile avec une assurance habitation fiable.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
+            "<div><img src='./assets/carousel/familly.png' alt='Habitation' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Habitation 2</h3><p class='text-sm'>Sécurisez votre domicile avec une assurance habitation fiable.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
         },
         {
           content:
-            "<div><img src='./assets/carousel/invest.jpg' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Épargne 3</h3><p class='text-sm'>Préparez l'avenir avec nos solutions d'épargne.<br />...</p><div class='flex gap-2 items-center'><a href='#'  class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
+            "<div><img src='./assets/carousel/invest.jpg' alt='Épargne' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Épargne 3</h3><p class='text-sm'>Préparez l'avenir avec nos solutions d'épargne.<br />...</p><div class='flex gap-2 items-center'><a href='#'  class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
         },
         {
           content:
-            "<div><img src='./assets/carousel/health.webp' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Santé et prévoyance 4</h3><p class='text-sm'>Assurez-vous une tranquillité d'esprit avec nos solutions de santé et prévoyance.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
+            "<div><img src='./assets/carousel/health.webp' alt='Santé et prévoyance' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Santé et prévoyance 4</h3><p class='text-sm'>Assurez-vous une tranquillité d'esprit avec nos solutions de santé et prévoyance.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
         },
         {
           content:
-            "<div><img src='./assets/carousel/health.webp' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Santé et prévoyance 5</h3><p class='text-sm'>Assurez-vous une tranquillité d'esprit avec nos solutions de santé et prévoyance.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
+            "<div><img src='./assets/carousel/health.webp' alt='Santé et prévoyance' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Santé et prévoyance 5</h3><p class='text-sm'>Assurez-vous une tranquillité d'esprit avec nos solutions de santé et prévoyance.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
         },
       ])
     )

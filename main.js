@@ -1,4 +1,3 @@
-// Costum slider code
 class CostumSlider extends HTMLElement {
   connectedCallback() {
     this.render();

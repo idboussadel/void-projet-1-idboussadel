@@ -1,0 +1,407 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./global.css" />
+    <title>RMA</title>
+  </head>
+
+  <body>
+    <!-- header -->
+    <header class="relative">
+      <secondary-nav></secondary-nav>
+      <main-nav></main-nav>
+      <menu-mobile></menu-mobile>
+    </header>
+
+    <main
+      class="min-h-[410px] px-[50px] max-md:pb-10 md:px-[50px] lg:px-[100px] max-md:mt-6 w-full flex justify-between items-center gap-[20px] max-md:flex-col"
+    >
+      <div
+        class="flex max-lg:self-start md:w-[50%] lg:w-[90%] flex-col gap-[14px] flex-wrap max-md:order-2"
+      >
+        <h1
+          class="font-bold text-blue-800 text-[38px] lg:text-[48px] leading-[54px]"
+        >
+          En cas d'accident RMA <br />Services gère tout
+        </h1>
+        <p>
+          Un point de contact unique pour la gestion de votre <br />sinistre
+          Automobile.
+        </p>
+        <button
+          class="bg-yellow-500 hover:bg-yellow-500/90 py-[16px] px-[24px] rounded-[8px] text-blue-800 text-[16px] font-bold self-start"
+        >
+          En savoir plus
+        </button>
+      </div>
+      <div class="max-md:order-1 w-full">
+        <img
+          src="./assets/hero.png"
+          alt="rma hero image"
+          class="rounded-[14px] flex-1 w-full h-auto object-cover"
+        />
+      </div>
+    </main>
+
+    <!-- services -->
+    <section
+      class="services-section grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 pb-[60px] gap-4 xl:gap-[20px] px-[50px] md:px-[50px] lg:px-[100px] mt-6 place-items-center"
+    >
+      <service-item
+        icon="fa-laptop"
+        class="w-full"
+        image="device-bg.png"
+        text="Obtenez un devis en quelques clics"
+      ></service-item>
+      <service-item
+        icon="fa-file-alt"
+        class="w-full"
+        image="contract-bg.png"
+        text="Renouvelez votre contrat d'assurance automobile"
+      ></service-item>
+      <service-item
+        icon="fa-cogs"
+        class="w-full"
+        image="garage-car-bg.png"
+        text="Déclarez et suivre votre sinistre"
+      ></service-item>
+      <service-item
+        icon="fa-map-marker-alt"
+        class="w-full"
+        image="localisation-bg.png"
+        text="Trouvez une agence"
+      ></service-item>
+    </section>
+
+    <!-- counters -->
+    <section
+      id="couterRma"
+      class="text-blue-800 px-[40px] md:px-[50px] lg:px-[100px] bg-[#F9FAFB] pt-12 pb-14"
+    >
+      <h2 class="font-bold text-[30px] text-center leading-[35.41px]">
+        RMA en quelques chiffres
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pt-10">
+        <div class="border-l-[7px] border-yellow-500 pl-6">
+          <h3 class="text-yellow-500 text-5xl font-bold text-48 mb-3">
+            +<my-counter data-target="350"></my-counter>
+          </h3>
+          <p class="text-xl font-400 leading-[1.55] text-[#667085]">
+            Points de vente
+          </p>
+        </div>
+        <div class="border-l-[7px] border-yellow-500 pl-6">
+          <h3 class="text-yellow-500 text-5xl font-bold text-48 mb-3">
+            +<my-counter data-target="700"></my-counter>
+          </h3>
+          <p class="text-xl font-400 leading-[1.55] text-[#667085]">
+            Collaborateurs
+          </p>
+        </div>
+        <div class="border-l-[7px] border-yellow-500 pl-6">
+          <h3 class="text-yellow-500 text-5xl font-bold text-48 mb-3">
+            <my-counter data-target="2"></my-counter> min
+          </h3>
+          <p class="text-xl font-400 leading-[1.55] text-[#667085]">
+            Temps moyen de souscription en ligne
+          </p>
+        </div>
+        <div class="border-l-[7px] border-yellow-500 pl-6">
+          <h3 class="text-yellow-500 text-5xl font-bold text-48 mb-3">
+            <my-counter data-target="5"></my-counter> min
+          </h3>
+          <p class="text-xl font-400 leading-[1.55] text-[#667085]">
+            Temps moyen de prise en charge d'un sinistre
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- offres carrousel -->
+    <section
+      id="offres-section"
+      class="flex flex-col gap-[37px] text-blue-800 px-[50px] md:px-[70px] px-[100px] py-[70px]"
+    >
+      <div class="flex flex-col gap-[10px]">
+        <h2 class="font-bold text-[26px] text-center leading-[35.41px]">
+          Les offres d'assurance RMA
+        </h2>
+        <div class="h-1 w-[56.47px] bg-yellow-500 mx-auto"></div>
+        <p class="text-center font-normal text-[18px] leading-[24.51px]">
+          Découvrez une large gamme de solutions d'assurance
+        </p>
+      </div>
+    </section>
+
+    <!-- Accordion -->
+    <section
+      class="text-blue-800 mt-[30px] px-[50px] md:px-[70px] px-[100px] bg-[#F9FAFB] pt-12 pb-16"
+    >
+      <h2 class="font-bold text-[30px] text-center leading-[35.41px] pb-9">
+        Une question ?
+      </h2>
+      <ul id="accordion-list" class="flex flex-col gap-3"></ul>
+    </section>
+
+    <!-- Annuaire -->
+    <section
+      class="text-blue-800 w-full px-[50px] md:px-[70px] px-[100px] bg-[#F9FAFB] pt-6 pb-16 flex flex-col"
+    >
+      <h2 class="font-bold text-[30px] text-center leading-[35.41px] pb-9">
+        Annuaire
+      </h2>
+      <div
+        id="annuaire"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[20px]"
+      ></div>
+      <button
+        id="load-more-btn"
+        class="mt-2 align-center inline-block items-center mt-8 self-center bg-blue-800 text-white py-[14px] px-[66px] rounded-md"
+      >
+        Load more
+      </button>
+    </section>
+
+    <!-- Contact form -->
+    <section
+      id="contact"
+      class="text-blue-800 w-full px-[50px] md:px-[70px] px-[100px] pt-[30px] pb-[60px]"
+    >
+      <h2 class="font-bold text-[30px] text-center leading-[35.41px] pb-10">
+        Nous contacter
+      </h2>
+      <form class="flex flex-col gap-[10px] w-full">
+        <fieldset>
+          <legend class="font-bold mb-3 text-lg">Civilité</legend>
+          <div class="flex gap-[100px]">
+            <div>
+              <input
+                type="radio"
+                id="Mme"
+                name="civilite"
+                value="Mme"
+                required
+              />
+              <label for="Mme">Mme. </label>
+            </div>
+            <div>
+              <input type="radio" id="M" name="civilite" value="M" required />
+              <label for="M">M.</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="flex max-md:flex-col gap-[19px] mt-5">
+          <div class="flex flex-col gap-2 flex-1">
+            <label for="Mme" class="font-bold text-lg">Nom </label>
+            <input
+              type="text"
+              id="nom"
+              name="nom"
+              placeholder="Nom"
+              class="border border-blue-100 text-blue-800 rounded-[8px] h-[43px] px-3"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="flex flex-col gap-2 flex-1">
+            <label for="Mme" class="font-bold text-lg">Prénom </label>
+            <input
+              type="text"
+              id="prenom"
+              name="prenom"
+              placeholder="Prénom"
+              class="border border-blue-100 text-blue-800 rounded-[8px] h-[43px] px-3"
+              required
+              aria-required="true"
+            />
+          </div>
+        </div>
+        <div class="flex max-md:flex-col gap-[19px] mt-2">
+          <div class="flex flex-col gap-2 flex-1">
+            <label for="Mme" class="font-bold text-lg">Addresse email </label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="E-mail"
+              class="border border-blue-100 text-blue-800 rounded-[8px] h-[43px] px-3"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="flex flex-col gap-2 flex-1">
+            <label for="Mme" class="font-bold text-lg"
+              >Numéro de téléphone
+            </label>
+            <input
+              type="text"
+              id="tele"
+              name="tele"
+              placeholder="Numéro de téléphone"
+              class="border border-blue-100 text-blue-800 rounded-[8px] h-[43px] px-3"
+              required
+              aria-required="true"
+            />
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2 flex-1 mt-2">
+          <label for="message" class="font-bold text-lg">Message</label>
+          <textarea
+            aria-required="true"
+            required
+            id="message"
+            name="message"
+            rows="5"
+            class="border border-blue-100 rounded-[8px] px-3 py-3 w-full"
+            maxlength="500"
+            placeholder="Message"
+          ></textarea>
+        </div>
+        <div class="mt-1">
+          <input type="checkbox" name="conditions" id="conditions" />
+          <label for="conditions" class="ml-2"
+            >J'ai lu et j'accepte les conditions générales d'utilisation,
+            notamment la mention relative à la protection de mes données
+            personnelles.</label
+          >
+        </div>
+        <button
+          id="submit-form"
+          class="mt-2 bg-blue-800 text-white py-[14px] self-end px-[66px] rounded-md"
+        >
+          Envoyer
+        </button>
+      </form>
+    </section>
+
+    <!-- footer -->
+    <footer
+      class="bg-gray-50 flex flex-col gap-[38px] text-blue-800 px-[50px] md:px-[70px] px-[100px] py-[48px]"
+    >
+      <div
+        class="grid grid-cols-1 max-md:gap-12 md:gap-8 md:grid-cols-2 lg:gap-0 lg:grid-cols-4"
+      >
+        <div>
+          <div>
+            <p class="font-bold text-[16px] mb-[20px]">Nos offres :</p>
+            <ul class="text-sm flex flex-col gap-2 leading-[19.07px]">
+              <li><a href="#">Automobile</a></li>
+              <li><a href="#">Habitation</a></li>
+              <li><a href="#">Épargne</a></li>
+              <li><a href="#">Santé et prévoyance</a></li>
+              <li><a href="#">Loisirs</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div>
+            <p class="font-bold text-[16px] mb-[20px]">
+              Déclarer un sinistre :
+            </p>
+            <ul class="text-sm flex flex-col gap-2 leading-[19.07px]">
+              <li><a href="#">Sinistre automobile</a></li>
+              <li><a href="#">Sinistre habitation</a></li>
+              <li><a href="#">Sinistre santé</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div>
+            <p class="font-bold text-[16px] mb-[20px]">Aide et assistance :</p>
+            <ul class="text-sm flex flex-col gap-2 leading-[19.07px]">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Nous contacter</a></li>
+              <li><a href="#">Contacter notre CRC 05 22 45 66 45</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div>
+            <p class="font-bold text-[16px] mb-[20px]">Suivez-nous</p>
+            <ul class="flex gap-[24px]">
+              <li>
+                <a href="#">
+                  <img
+                    src="./assets/socials/facebook.svg"
+                    alt="facebook icon"
+                    class="w-[30px] h-[30px]"
+                /></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="./assets/socials/instagram.svg"
+                    alt="instagram icon"
+                    class="w-[30px] h-[30px]"
+                /></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="./assets/socials/linkedin.svg"
+                    alt="linkedin icon"
+                    class="w-[30px] h-[30px]"
+                /></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="./assets/socials/x.svg"
+                    alt="x/twitter icon"
+                    class="w-[30px] h-[30px]"
+                /></a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    src="./assets/socials/youtube.svg"
+                    alt="youtube icon"
+                    class="w-[30px] h-[30px]"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t flex max-md:flex-col max-md:items-center max-md:gap-8 justify-between border-gray-200 pt-[17px] max-md:pt-[24px]"
+      >
+        <img src="./assets/logo-gris.png" alt="RMA logo" class="w-[159px]" />
+        <div class="flex gap-[24px] text-sm md:self-end">
+          <a href="#">A propos de RMA</a>
+          <a href="#">Mentions légales</a>
+          <a href="#">Plan de site</a>
+        </div>
+        <p class="text-sm md:self-end text-blue-500">
+          &copy; 2024 RMA. Tous droits réservés
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "blue-100": "#C6CBE9",
+              "blue-300": "#848ECF",
+              "blue-500": "#4756B8",
+              "blue-800": "#272F65",
+              "yellow-500": "#ECA93B",
+              "yellow-300": "#F6CF8B",
+            },
+          },
+        },
+      };
+    </script>
+  </body>
+</html>

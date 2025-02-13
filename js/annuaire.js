@@ -94,7 +94,7 @@ const loadMore = (item) => {
   annuaireDiv.className =
     "bg-white px-4 py-3 flex flex-col gap-2 rounded-md border";
   annuaireDiv.innerHTML = `
-    <h4 class="font-bold">${item.name}</h4>
+    <h3 class="font-bold">${item.name}</h3>
     <p>${item.adresse}</p>
     <p>${item.phone}</p>
     <a href=${item.link}>Voir itinéraire</a>

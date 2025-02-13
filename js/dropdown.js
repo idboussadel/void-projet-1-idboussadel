@@ -11,7 +11,7 @@ class DropDown extends HTMLElement {
 
     this.innerHTML = `
         <div class="dropdown-wrapper" class="relative">
-            <button id=${btnId} aria-expanded="false" aria-controls="dropdown" class="text-blue-800 pb-2 flex items-center gap-[9px]">
+            <button id=${btnId} aria-expanded="false" aria-controls="dropdown" class="text-blue-800 py-2 flex items-center gap-[9px]">
                 <span>${btnName}</span>
                 <img src="./assets/downArrow.svg" alt="Toggle dropdown" class="h-[24px] w-[24px]" />
             </button>

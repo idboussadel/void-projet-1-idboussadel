@@ -42,7 +42,7 @@ class SecondaryNav extends HTMLElement {
 class MainNav extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-          <nav class="max-md:hidden main-nav text-blue-800 p-[20px] font-bold text-[18px]">
+          <nav class="max-md:hidden items-center main-nav text-blue-800 p-[20px] font-bold text-[18px]">
               <ul class="flex gap-[40px] items-center">
                   <li>
                       <img src="https://www.rmaassurance.com/img/logo/rma_logo_header.png" alt="RMA logo" class="w-[159px]"/>

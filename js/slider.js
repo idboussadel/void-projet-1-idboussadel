@@ -1,60 +1,54 @@
-class CostumSlider extends HTMLElement {
-  connectedCallback() {
+class CustomCarousel extends HTMLElement {
+  constructor() {
+    super();
     this.render();
   }
 
+  connectedCallback() {
+    this.setupEventListeners();
+  }
+
   render() {
-    const encodedContenu = this.getAttribute("data-contenu") || "";
-    let contenu = JSON.parse(decodeURIComponent(encodedContenu));
-    const slideWidth = 240;
-
-    let offset = 0;
-
-    // Generate slides
-    const slidesHtml = contenu
-      .map(
-        (slide, i) => `
-        <div class='slide flex-1 min-w-[15rem] overflow-hidden rounded-[16px] shadow-[0px_4px_25px_0px_#2D313F24]' 
-             role="group" aria-label='Slide ${i + 1} of ${contenu.length}'>
-          ${slide.content}
-        </div>`
-      )
-      .join("");
-
+    const contenu = JSON.parse(
+      decodeURIComponent(this.getAttribute("data-contenu")) || "[]"
+    );
     this.innerHTML = `
       <div class="flex gap-[20px] mx-auto max-w-[75rem] items-center">
-        <button aria-label="Previous slide" class="prev-btn">
-      <img src="./assets/cercle-arrow.svg" alt="Previous arrow" class="slider-arrow" style="transform: rotate(180deg);" />
-        </button>
-
-        <div class="mx-auto overflow-hidden px-5 py-8">
-          <div class="slides flex gap-[20px] transition-transform duration-300 ease">
-            ${slidesHtml}
-          </div>
+        <button aria-label="Previous slide" id="carrouselLeft" >
+           <img src="./assets/cercle-arrow.svg" alt="Previous arrow" class="slider-arrow" style="transform: rotate(180deg);" />
+        </button>        
+          <div id="carrouselContainer" class="flex gap-4 overflow-x-auto scroll-smooth px-6 py-6">
+          ${contenu
+            .map(
+              (slide, i) => `
+            <div class='slide flex-1 min-w-[15rem] rounded-[16px] shadow-[0px_4px_25px_0px_#2D313F24]' role="group" aria-label='Slide ${
+              i + 1
+            } of ${contenu.length}'>
+              ${slide.content}
+            </div>`
+            )
+            .join("")}
         </div>
-
-        <button aria-label="Next slide" class="next-btn">
-          <img src="./assets/cercle-arrow.svg" alt="Next arrow" class="slider-arrow"/>
-        </button>
+          <button id="carrouselRight" aria-label="Next slide">
+            <img src="./assets/cercle-arrow.svg" alt="Next arrow" class="slider-arrow"/>
+          </button>
       </div>
     `;
+  }
 
-    const slideElements = this.querySelectorAll(".slide");
-    const slides = this.querySelector(".slides");
-    const maxOffset = (contenu.length - 1) * slideWidth;
+  setupEventListeners() {
+    const container = this.querySelector("#carrouselContainer");
+    const btnLeft = this.querySelector("#carrouselLeft");
+    const btnRight = this.querySelector("#carrouselRight");
 
-    this.querySelector(".next-btn").addEventListener("click", () => {
-      if (offset < maxOffset) {
-        offset += slideWidth;
-        slides.style.transform = `translateX(-${offset}px)`;
-      }
+    btnRight.addEventListener("click", () => {
+      container.style.scrollBehavior = "smooth";
+      container.scrollLeft += 300;
     });
 
-    this.querySelector(".prev-btn").addEventListener("click", () => {
-      if (offset > 0) {
-        offset -= slideWidth;
-        slides.style.transform = `translateX(-${offset}px)`;
-      }
+    btnLeft.addEventListener("click", () => {
+      container.style.scrollBehavior = "smooth";
+      container.scrollLeft -= 300;
     });
   }
 }
@@ -62,7 +56,7 @@ class CostumSlider extends HTMLElement {
 const offresSection = document.getElementById("offres-section");
 
 if (offresSection) {
-  const slider = document.createElement("costum-slider");
+  const slider = document.createElement("custom-carousel");
 
   slider.setAttribute(
     "data-contenu",
@@ -116,9 +110,7 @@ if (offresSection) {
     )
   );
 
-  slider.setAttribute("nbrSlidesShow", 4);
-
   offresSection.appendChild(slider);
 }
 
-customElements.define("costum-slider", CostumSlider);
+customElements.define("custom-carousel", CustomCarousel);

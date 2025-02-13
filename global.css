@@ -16,3 +16,12 @@ body {
   width: 32px;
   height: 32px;
 }
+
+#carrouselContainer::-webkit-scrollbar {
+  display: none;
+}
+
+#carrouselContainer {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}

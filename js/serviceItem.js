@@ -24,7 +24,7 @@ class ServiceItem extends HTMLElement {
                       
           
                       <div class="flex justify-between">
-                          <p class="text-[18px] font-bold self-end text-blue-800">${text}</p>
+                          <h2 class="text-[18px] font-bold self-end text-blue-800">${text}</h2>
                           <img src="./assets/rightArrow.svg" alt="Right arrow icon" class="self-end h-[24px] w-[24px]" />
                       </div>
                   </div>

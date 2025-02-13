@@ -37,12 +37,12 @@ accordionsData.forEach((accordion) => {
                 src="./assets/cercle-plus.svg"
                 alt="x/twitter icon"
                 class="accord-display w-[30px] h-[30px]"
-              />
+              >
               <img
                 src="./assets/cercle-minus.svg"
                 alt="x/twitter icon"
                 class="accord-collapse w-[30px] h-[30px] hidden"
-              />
+              >
             </div>
 
             <p class="hidden pt-3 transition-all duration-500 ease-in-out">

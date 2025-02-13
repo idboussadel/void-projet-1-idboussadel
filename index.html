@@ -25,6 +25,9 @@
     <meta property="og:url" content="https://www.rmaassurance.com/" />
     <meta property="og:type" content="website" />
 
+    <!-- preload the hero image -->
+    <link rel="preload" href="./assets/hero.png" as="image" />
+
     <!-- Stylesheets -->
     <link
       rel="stylesheet"
@@ -412,7 +415,11 @@
       <div
         class="border-t flex max-md:flex-col max-md:items-center max-md:gap-8 justify-between border-gray-200 pt-[17px] max-md:pt-[24px]"
       >
-        <img src="./assets/logo-gris.png" alt="RMA logo" class="w-[159px]" />
+        <img
+          src="https://www.rmaassurance.com/img/logo/rma-logo-footer.svg"
+          alt="RMA logo"
+          class="w-[159px] cursor-pointer"
+        />
         <div class="flex gap-[24px] text-sm md:self-end">
           <a href="#">A propos de RMA</a>
           <a href="#">Mentions légales</a>
@@ -425,7 +432,7 @@
     </footer>
 
     <!-- scripts -->
-    <script src="js/slider.js?v=1.0"></script>
+    <script src="js/slider.js?v=1.1"></script>
     <script src="js/annuaire.js?v=1.0"></script>
     <script src="js/accordion.js?v=1.0"></script>
     <script src="js/nav.js?v=1.0"></script>

@@ -1,3 +1,14 @@
+const dropDownitems = [
+  {
+    btnName: "Automobile",
+    dropdownElements: ["assurance", "réparations", "entretien", "ventes"],
+  },
+  {
+    btnName: "Conseils et prévention",
+    dropdownElements: ["assurance", "consultation", "diagnostic", "prévention"],
+  },
+];
+
 class SecondaryNav extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
@@ -37,19 +48,12 @@ class MainNav extends HTMLElement {
                       <img src="https://www.rmaassurance.com/img/logo/rma_logo_header.png" alt="RMA logo" class="w-[159px]"/>
                   </li>
                   <li>
-                  <button aria-expanded="false" aria-controls="dropdown" class="flex items-center gap-[9px]">
-                      <span>Automobile</span>
-                      <img src="./assets/downArrow.svg" alt="Toggle dropdown" class="h-[24px] w-[24px]" />
-                  </button>
+                  <li><drop-down btnId=${dropDownitems[0].btnName} btnName=${dropDownitems[0].btnName} dropdownElements=${dropDownitems[0].dropdownElements}></drop-down></li>
                   </li>
                   <li>Habitation</li>
                   <li>santé et prévoyance</li>
                   <li>Épargne</li>
-                  <li>
-                  <button aria-expanded="false" aria-controls="dropdown" class="flex items-center gap-[9px]">
-                      <span>Conseils et prévention</span>
-                      <img src="./assets/downArrow.svg" alt="Toggle dropdown" class="h-[24px] w-[24px]" />
-                  </button></li>
+                  <li><drop-down btnId=${dropDownitems[1].btnName} btnName=${dropDownitems[1].btnName} dropdownElements=${dropDownitems[1].dropdownElements}></drop-down></li>
               </ul>
           </nav>
           `;

@@ -18,11 +18,10 @@ class ServiceItem extends HTMLElement {
                   <img src="./assets/services/${image}" alt="Service Icon" class="absolute h-[182px] w-[182px] ${imageClass} bottom-[35%] md:bottom-[30%] left-[60%] md:left-[55%]" />
                   
                   <div class="flex flex-col justify-between h-full w-full">
-                    <spa class="bg-white inline-flex items-center group-hover:bg-blue-800 justify-center rounded-full w-12 h-12 p-3 ">
+                    <span class="bg-white inline-flex items-center group-hover:bg-blue-800 justify-center rounded-full w-12 h-12 p-3 ">
                        <i class="${iconClass} text-blue-800 group-hover:text-white text-2xl" alt="Service Icon"></i>
-                   </spa>
+                   </span>
                       
-          
                       <div class="flex justify-between">
                           <h2 class="text-[18px] font-bold self-end text-blue-800">${text}</h2>
                           <img src="./assets/rightArrow.svg" alt="Right arrow icon" class="self-end h-[24px] w-[24px]" />

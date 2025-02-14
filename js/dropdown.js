@@ -15,7 +15,7 @@ class DropDown extends HTMLElement {
                 <span>${btnName}</span>
                 <img src="./assets/downArrow.svg" alt="Toggle dropdown" class="h-[24px] w-[24px]" />
             </button>
-            <div class="bg-white hidden shadow absolute px-2 rounded-md py-2 border">
+            <div style={{ zIndex: 999 }} class="bg-white hidden shadow absolute px-2 rounded-md py-2 border">
                 <ul class="flex flex-col gap-4">
                      ${dropdownElements
                        .map((element) => {

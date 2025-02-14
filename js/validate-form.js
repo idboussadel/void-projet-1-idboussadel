@@ -91,43 +91,17 @@ const submitContact = (e) => {
 
   console.log(isValid);
   if (isValid) {
-    showToast("Form details have been sent successfully.", "success");
+    const newToast = new Toast(
+      "Form details have been sent successfully.",
+      "success"
+    );
+    newToast.show(document.body);
     form.reset();
   } else {
-    showToast("Failed to send form details.", "error");
+    const newToast = new Toast("Failed to send form details.", "error");
+    newToast.show(document.body);
   }
 };
-
-function showToast(message, type) {
-  const toastContainer = document.getElementById("toast-container");
-
-  // Remove any existing toast before adding a new one
-  const existingToast = document.querySelector("custom-toast");
-  if (existingToast) {
-    existingToast.remove();
-  }
-
-  // Create a new toast
-  const toastDiv = document.createElement("custom-toast");
-  toastDiv.setAttribute("message", message);
-  toastDiv.setAttribute("type", type);
-
-  toastContainer.appendChild(toastDiv);
-
-  // to wait the toastDiv to be created in the dom
-  setTimeout(() => {
-    const toast = toastDiv.querySelector("#toast");
-    if (toast) {
-      toast.classList.remove("-translate-y-[100px]");
-    }
-  }, 1);
-
-  setTimeout(() => {
-    if (toastDiv) {
-      toastDiv.querySelector("#toast").classList.add("-translate-y-[100px]");
-    }
-  }, 2000);
-}
 
 const btn = document.getElementById("submit-form");
 btn.addEventListener("click", submitContact);

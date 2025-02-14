@@ -1,4 +1,4 @@
-const sliderData = [
+const carouselData = [
   {
     imageSrc:
       "https://cdnlearnblog.etmoney.com/wp-content/uploads/2022/09/Boost-Your-Car-Insurance.jpg",
@@ -55,32 +55,36 @@ const sliderData = [
     link: "#",
   },
 ];
-class CustomCarousel extends HTMLElement {
-  constructor() {
-    super();
-    this.render();
-  }
+class CustomCarousel {
+  constructor(targetElement, carouselData) {
+    if (!targetElement) {
+      console.error("Target element provided doesn't exist.");
+      return;
+    }
 
-  connectedCallback() {
-    this.setupEventListeners();
-  }
+    const carousel = document.createElement("div");
+    carousel.className = "flex gap-[20px] mx-auto max-w-[75rem] items-center";
 
-  render() {
-    const contenu = JSON.parse(
-      decodeURIComponent(this.getAttribute("data-contenu")) || "[]"
+    const carouselItems = carouselData.map((item) =>
+      createSliderContent(
+        item.imageSrc,
+        item.title,
+        item.description,
+        item.link
+      )
     );
-    this.innerHTML = `
-      <div class="flex gap-[20px] mx-auto max-w-[75rem] items-center">
+
+    carousel.innerHTML = `
         <button aria-label="Previous slide" id="carrouselLeft" >
            <img src="./assets/cercle-arrow.svg" alt="Previous arrow" class="slider-arrow" style="transform: rotate(180deg);" />
         </button>        
           <div id="carrouselContainer" class="flex gap-4 overflow-x-auto scroll-smooth px-6 py-6">
-          ${contenu
+          ${carouselItems
             .map(
               (slide, i) => `
             <div class='slide flex-1 min-w-[15rem] rounded-[16px] shadow-[0px_4px_25px_0px_#2D313F24]' role="group" aria-label='Slide ${
               i + 1
-            } of ${contenu.length}'>
+            } of ${carouselItems.length}'>
               ${slide.content}
             </div>`
             )
@@ -89,23 +93,26 @@ class CustomCarousel extends HTMLElement {
           <button id="carrouselRight" aria-label="Next slide">
             <img src="./assets/cercle-arrow.svg" alt="Next arrow" class="slider-arrow"/>
           </button>
-      </div>
     `;
+
+    this.container = carousel.querySelector("#carrouselContainer");
+    this.btnLeft = carousel.querySelector("#carrouselLeft");
+    this.btnRight = carousel.querySelector("#carrouselRight");
+
+    targetElement.appendChild(carousel);
+
+    this.init();
   }
 
-  setupEventListeners() {
-    const container = this.querySelector("#carrouselContainer");
-    const btnLeft = this.querySelector("#carrouselLeft");
-    const btnRight = this.querySelector("#carrouselRight");
-
-    btnRight.addEventListener("click", () => {
-      container.style.scrollBehavior = "smooth";
-      container.scrollLeft += 300;
+  init() {
+    this.btnRight.addEventListener("click", () => {
+      this.container.style.scrollBehavior = "smooth";
+      this.container.scrollLeft += 300;
     });
 
-    btnLeft.addEventListener("click", () => {
-      container.style.scrollBehavior = "smooth";
-      container.scrollLeft -= 300;
+    this.btnLeft.addEventListener("click", () => {
+      this.container.style.scrollBehavior = "smooth";
+      this.container.scrollLeft -= 300;
     });
   }
 }
@@ -127,19 +134,7 @@ function createSliderContent(imageSrc, title, description, link) {
   };
 }
 
-const offresSection = document.getElementById("offres-section");
-
-if (offresSection) {
-  const slider = document.createElement("custom-carousel");
-  const sliderContent = sliderData.map((item) =>
-    createSliderContent(item.imageSrc, item.title, item.description, item.link)
-  );
-  slider.setAttribute(
-    "data-contenu",
-    encodeURIComponent(JSON.stringify(sliderContent))
-  );
-
-  offresSection.appendChild(slider);
-}
-
-customElements.define("custom-carousel", CustomCarousel);
+document.addEventListener("DOMContentLoaded", () => {
+  const offresSection = document.getElementById("offres-section");
+  new CustomCarousel(offresSection, carouselData);
+});

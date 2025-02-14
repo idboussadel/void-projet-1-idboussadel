@@ -1,3 +1,60 @@
+const sliderData = [
+  {
+    imageSrc:
+      "https://cdnlearnblog.etmoney.com/wp-content/uploads/2022/09/Boost-Your-Car-Insurance.jpg",
+    title: "Automobile 1",
+    description:
+      "Protégez votre véhicule avec une assurance automobile adaptée à vos besoins.",
+    link: "#",
+  },
+  {
+    imageSrc:
+      "https://t4.ftcdn.net/jpg/04/27/04/89/360_F_427048913_GFksevhIEtfN5xGyqU9iuwdsJeUdsKZy.jpg",
+    title: "Habitation 2",
+    description:
+      "Sécurisez votre domicile avec une assurance habitation fiable.",
+    link: "#",
+  },
+  {
+    imageSrc:
+      "https://img.freepik.com/photos-gratuite/piles-pieces-disposees-dans-graphique-barres_35913-2518.jpg?semt=ais_hybrid",
+    title: "Épargne 3",
+    description: "Préparez l'avenir avec nos solutions d'épargne.",
+    link: "#",
+  },
+  {
+    imageSrc:
+      "https://img.freepik.com/photos-gratuite/gros-plan-docteur-stethoscope_23-2149191355.jpg?semt=ais_hybrid",
+    title: "Santé et prévoyance 4",
+    description:
+      "Assurez-vous une tranquillité d'esprit avec nos solutions de santé et prévoyance.",
+    link: "#",
+  },
+  {
+    imageSrc:
+      "https://cdnlearnblog.etmoney.com/wp-content/uploads/2022/09/Boost-Your-Car-Insurance.jpg",
+    title: "Santé et prévoyance 5",
+    description:
+      "Assurez-vous une tranquillité d'esprit avec nos solutions de santé et prévoyance.",
+    link: "#",
+  },
+  {
+    imageSrc:
+      "https://www.iledefrance.fr/sites/default/files/styles/hub_exposition_banner_desktop/public/medias/istock-photobyphotoboy.jpg.webp?itok=_2VuK8a4",
+    title: "Habitation 2",
+    description:
+      "Sécurisez votre domicile avec une assurance habitation fiable.",
+    link: "#",
+  },
+  {
+    imageSrc:
+      "https://cdnlearnblog.etmoney.com/wp-content/uploads/2022/09/Boost-Your-Car-Insurance.jpg",
+    title: "Automobile 10",
+    description:
+      "Protégez votre véhicule avec une assurance automobile adaptée à vos besoins.",
+    link: "#",
+  },
+];
 class CustomCarousel extends HTMLElement {
   constructor() {
     super();
@@ -53,57 +110,33 @@ class CustomCarousel extends HTMLElement {
   }
 }
 
+function createSliderContent(imageSrc, title, description, link) {
+  return {
+    content: `
+      <div>
+        <img src="${imageSrc}" loading="lazy" alt="${title}" class="w-full h-[170px] rounded-t-[16px]" />
+        <div class="flex flex-col gap-[8px] p-[20px]">
+          <h3 class="font-bold text-[18px]">${title}</h3>
+          <p class="text-sm">${description}</p>
+          <div class="flex gap-2 items-center">
+            <a href="${link}" class="text-blue-500">En savoir plus</a>
+            <img src="./assets/rightArrowLight.svg" alt="Right arrow icon" loading="lazy" class="h-[16px] w-[16px] mt-1" />
+          </div>
+        </div>
+      </div>`,
+  };
+}
+
 const offresSection = document.getElementById("offres-section");
 
 if (offresSection) {
   const slider = document.createElement("custom-carousel");
-
+  const sliderContent = sliderData.map((item) =>
+    createSliderContent(item.imageSrc, item.title, item.description, item.link)
+  );
   slider.setAttribute(
     "data-contenu",
-    encodeURIComponent(
-      JSON.stringify([
-        {
-          content:
-            "<div><img src='https://cdnlearnblog.etmoney.com/wp-content/uploads/2022/09/Boost-Your-Car-Insurance.jpg' alt='Automobile' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Automobile 1</h3><p class='text-sm'>Protégez votre véhicule avec une assurance automobile adaptée à vos besoins.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-        {
-          content:
-            "<div><img src='https://t4.ftcdn.net/jpg/04/27/04/89/360_F_427048913_GFksevhIEtfN5xGyqU9iuwdsJeUdsKZy.jpg' alt='Habitation' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Habitation 2</h3><p class='text-sm'>Sécurisez votre domicile avec une assurance habitation fiable.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-        {
-          content:
-            "<div><img src='https://img.freepik.com/photos-gratuite/piles-pieces-disposees-dans-graphique-barres_35913-2518.jpg?semt=ais_hybrid' alt='Épargne' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Épargne 3</h3><p class='text-sm'>Préparez l'avenir avec nos solutions d'épargne.<br />...</p><div class='flex gap-2 items-center'><a href='#'  class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-        {
-          content:
-            "<div><img src=' https://img.freepik.com/photos-gratuite/gros-plan-docteur-stethoscope_23-2149191355.jpg?semt=ais_hybrid' alt='Santé et prévoyance' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Santé et prévoyance 4</h3><p class='text-sm'>Assurez-vous une tranquillité d'esprit avec nos solutions de santé et prévoyance.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-        {
-          content:
-            "<div><img src='https://cdnlearnblog.etmoney.com/wp-content/uploads/2022/09/Boost-Your-Car-Insurance.jpg' alt='Santé et prévoyance' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Santé et prévoyance 5</h3><p class='text-sm'>Assurez-vous une tranquillité d'esprit avec nos solutions de santé et prévoyance.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-        {
-          content:
-            "<div><img src='https://t4.ftcdn.net/jpg/04/27/04/89/360_F_427048913_GFksevhIEtfN5xGyqU9iuwdsJeUdsKZy.jpg' alt='Automobile' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Automobile 1</h3><p class='text-sm'>Protégez votre véhicule avec une assurance automobile adaptée à vos besoins.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-        {
-          content:
-            "<div><img src='https://www.iledefrance.fr/sites/default/files/styles/hub_exposition_banner_desktop/public/medias/istock-photobyphotoboy.jpg.webp?itok=_2VuK8a4' alt='Habitation' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Habitation 2</h3><p class='text-sm'>Sécurisez votre domicile avec une assurance habitation fiable.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-        {
-          content:
-            "<div><img src='https://img.freepik.com/photos-gratuite/gros-plan-docteur-stethoscope_23-2149191355.jpg?semt=ais_hybrid' alt='Épargne' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Épargne 3</h3><p class='text-sm'>Préparez l'avenir avec nos solutions d'épargne.<br />...</p><div class='flex gap-2 items-center'><a href='#'  class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-        {
-          content:
-            "<div><img src='https://t4.ftcdn.net/jpg/04/27/04/89/360_F_427048913_GFksevhIEtfN5xGyqU9iuwdsJeUdsKZy.jpg' alt='Habitation' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Habitation 2</h3><p class='text-sm'>Sécurisez votre domicile avec une assurance habitation fiable.</p><div class='flex gap-2 items-center'><a href='#' class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-        {
-          content:
-            "<div><img src='https://www.iledefrance.fr/sites/default/files/styles/hub_exposition_banner_desktop/public/medias/istock-photobyphotoboy.jpg.webp?itok=_2VuK8a4' alt='Épargne' class='w-full h-[170px] rounded-t-[16px]'/><div class='flex flex-col gap-[8px] p-[20px]'><h3 class='font-bold text-[18px]'>Épargne 3</h3><p class='text-sm'>Préparez l'avenir avec nos solutions d'épargne.<br />...</p><div class='flex gap-2 items-center'><a href='#'  class='text-blue-500'>En savoir plus</a><img src='./assets/rightArrowLight.svg' alt='Right arrow icon' class='h-[16px] w-[16px] mt-1' /></div></div></div>",
-        },
-      ])
-    )
+    encodeURIComponent(JSON.stringify(sliderContent))
   );
 
   offresSection.appendChild(slider);

@@ -28,6 +28,23 @@
 
     <!-- preload the hero image -->
     <link rel="preload" href="./assets/hero.webp" as="image" />
+    <link rel="preload" href="./assets/services/contract-bg.webp" as="image" />
+    <link rel="preload" href="./assets/services/device-bg.webp" as="image" />
+    <link
+      rel="preload"
+      href="./assets/services/garage-car-bg.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="./assets/services/localisation-bg.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="https://www.rmaassurance.com/img/logo/rma_logo_header.png"
+      as="image"
+    />
 
     <!-- Stylesheets -->
     <link
@@ -98,25 +115,25 @@
       <service-item
         icon="fa-laptop"
         class="w-full"
-        image="device-bg.png"
+        image="device-bg.webp"
         text="Obtenez un devis en quelques clics"
       ></service-item>
       <service-item
         icon="fa-file-alt"
         class="w-full"
-        image="contract-bg.png"
+        image="contract-bg.webp"
         text="Renouvelez votre contrat d'assurance automobile"
       ></service-item>
       <service-item
         icon="fa-cogs"
         class="w-full"
-        image="garage-car-bg.png"
+        image="garage-car-bg.webp"
         text="Déclarez et suivre votre sinistre"
       ></service-item>
       <service-item
         icon="fa-map-marker-alt"
         class="w-full"
-        image="localisation-bg.png"
+        image="localisation-bg.webp"
         text="Trouvez une agence"
       ></service-item>
     </section>
@@ -387,6 +404,7 @@
                     src="./assets/socials/facebook.svg"
                     alt="facebook icon"
                     class="w-[30px] h-[30px]"
+                    loading="lazy"
                 /></a>
               </li>
               <li>
@@ -395,6 +413,7 @@
                     src="./assets/socials/instagram.svg"
                     alt="instagram icon"
                     class="w-[30px] h-[30px]"
+                    loading="lazy"
                 /></a>
               </li>
               <li>
@@ -403,6 +422,7 @@
                     src="./assets/socials/linkedin.svg"
                     alt="linkedin icon"
                     class="w-[30px] h-[30px]"
+                    loading="lazy"
                 /></a>
               </li>
               <li>
@@ -411,6 +431,7 @@
                     src="./assets/socials/x.svg"
                     alt="x/twitter icon"
                     class="w-[30px] h-[30px]"
+                    loading="lazy"
                 /></a>
               </li>
               <li>
@@ -432,6 +453,7 @@
           src="https://www.rmaassurance.com/img/logo/rma-logo-footer.svg"
           alt="RMA logo"
           class="w-[159px] cursor-pointer"
+          loading="lazy"
         />
         <div class="flex gap-[24px] text-sm md:self-end">
           <a href="#">A propos de RMA</a>

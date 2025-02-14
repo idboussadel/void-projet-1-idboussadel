@@ -8,7 +8,7 @@ class ServiceItem extends HTMLElement {
     const text = this.getAttribute("text") || "";
     const image = this.getAttribute("image") || "";
     const imageClass =
-      image === "device-bg.png" || image === "localisation-bg.png"
+      image === "device-bg.webp" || image === "localisation-bg.webp"
         ? "opacity-20"
         : "";
     const iconClass = icon ? `fas ${icon}` : "";

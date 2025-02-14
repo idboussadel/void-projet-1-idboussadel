@@ -1,26 +1,50 @@
 class Counter extends HTMLElement {
   connectedCallback() {
-    const target = +this.getAttribute("data-target");
-    const speed = +this.getAttribute("speed") || 400;
-    let number = 0;
+    this.innerHTML = "";
 
-    const inc = target / speed;
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add the counter content only when the element is in the viewport
+            this.innerHTML = `
+            <span class="counter-number">0</span>
+          `;
 
-    this.innerHTML = `
-          <span class="counter-number">0</span>
-      `;
+            const target = +this.getAttribute("data-target");
+            const speed = +this.getAttribute("speed") || 400;
+            const counterElement = this.querySelector(".counter-number");
 
-    const counterElement = this.querySelector(".counter-number");
+            let number = 0;
+            const inc = target / speed;
 
-    const interval = setInterval(() => {
-      if (number < target) {
-        number += inc;
-        counterElement.textContent = Math.floor(number);
-      } else {
-        counterElement.textContent = target;
-        clearInterval(interval);
+            // Function to start counting
+            const startCounting = () => {
+              const interval = setInterval(() => {
+                if (number < target) {
+                  number += inc;
+                  counterElement.textContent = Math.floor(number);
+                } else {
+                  counterElement.textContent = target;
+                  clearInterval(interval);
+                }
+              }, 1);
+            };
+
+            startCounting();
+
+            observer.unobserve(entry.target); // Stop observing the element once it's in view
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.3,
       }
-    }, 1);
+    );
+
+    // Observe the counter element
+    observer.observe(this);
   }
 }
 

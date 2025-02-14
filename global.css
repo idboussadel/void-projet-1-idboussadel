@@ -25,3 +25,16 @@ body {
   -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer */
   scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
+
+.fade-in-top,
+.fade-in {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-top.visible,
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

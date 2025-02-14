@@ -1,9 +1,16 @@
-class ContactBtns extends HTMLElement {
-  connectedCallback() {
-    // Get the attribute 'contact-data' as a JSON string
-    const contactData = JSON.parse(this.getAttribute("contact-data") || "[]");
+contactData = [
+  { href: "#", icon: "./assets/phone.svg", text: "Nous contacter" },
+  { href: "#", icon: "./assets/building.svg", text: "Trouver une agence" },
+];
+class ContactBtns {
+  constructor(targetElement, contactData) {
+    if (!targetElement) {
+      console.error("Target element provided doesn't exist.");
+      return;
+    }
 
-    // Build the HTML content dynamically based on the provided data
+    this.contactWrapper = document.createElement("div");
+
     const buttonsHtml = contactData
       .map((item, index) => {
         return `
@@ -24,8 +31,12 @@ class ContactBtns extends HTMLElement {
       })
       .join("");
 
-    this.innerHTML = `<div class='text-blue-800'>${buttonsHtml}</div>`;
+    this.contactWrapper.innerHTML = `<div class='text-blue-800'>${buttonsHtml}</div>`;
+
+    targetElement.appendChild(this.contactWrapper);
   }
 }
 
-customElements.define("contacts-btns", ContactBtns);
+document.addEventListener("DOMContentLoaded", () => {
+  new ContactBtns(document.body, contactData);
+});

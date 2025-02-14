@@ -19,7 +19,7 @@ class ServiceItem extends HTMLElement {
                   
                   <div class="flex flex-col justify-between h-full w-full">
                     <span class="bg-white inline-flex items-center group-hover:bg-blue-800 justify-center rounded-full w-12 h-12 p-3 ">
-                       <i class="${iconClass} text-blue-800 group-hover:text-white text-2xl" alt="Service Icon"></i>
+                       <i  style="font-size: 24px;" class="${iconClass} text-blue-800 group-hover:text-white text-2xl" alt="Service Icon"></i>
                    </span>
                       
                       <div class="flex justify-between">

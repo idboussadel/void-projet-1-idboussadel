@@ -27,6 +27,7 @@ const submitContact = (e) => {
   const inputTele = document.getElementById("tele");
   const inputMessage = document.getElementById("message");
   const inputConditions = document.getElementById("conditions");
+  const form = document.getElementById("contact-form");
 
   let isValid = true;
 
@@ -91,6 +92,7 @@ const submitContact = (e) => {
   console.log(isValid);
   if (isValid) {
     showToast("Form details have been sent successfully.", "success");
+    form.reset();
   } else {
     showToast("Failed to send form details.", "error");
   }

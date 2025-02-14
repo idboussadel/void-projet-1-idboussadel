@@ -102,6 +102,8 @@
           <img
             src="./assets/hero.png"
             alt="rma hero image"
+            height="414"
+            width="642"
             class="rounded-[14px] flex-1 w-full h-auto"
           />
         </picture>
@@ -236,7 +238,7 @@
       <h2 class="font-bold text-[30px] text-center leading-[35.41px] pb-10">
         Nous contacter
       </h2>
-      <form class="flex flex-col gap-[10px] w-full">
+      <form id="contact-form" class="flex flex-col gap-[10px] w-full">
         <fieldset>
           <legend class="font-bold mb-3 text-lg">Civilité</legend>
           <div class="flex gap-[100px]">
@@ -259,7 +261,7 @@
 
         <div class="flex max-md:flex-col gap-[19px] mt-5">
           <div class="flex flex-col gap-2 flex-1">
-            <label for="Mme" class="font-bold text-lg">Nom </label>
+            <label for="nom" class="font-bold text-lg">Nom </label>
             <input
               type="text"
               id="nom"
@@ -271,7 +273,7 @@
             />
           </div>
           <div class="flex flex-col gap-2 flex-1">
-            <label for="Mme" class="font-bold text-lg">Prénom </label>
+            <label for="prenom" class="font-bold text-lg">Prénom </label>
             <input
               type="text"
               id="prenom"
@@ -285,7 +287,7 @@
         </div>
         <div class="flex max-md:flex-col gap-[19px] mt-2">
           <div class="flex flex-col gap-2 flex-1">
-            <label for="Mme" class="font-bold text-lg">Addresse email </label>
+            <label for="email" class="font-bold text-lg">Addresse email </label>
             <input
               type="text"
               id="email"
@@ -297,7 +299,7 @@
             />
           </div>
           <div class="flex flex-col gap-2 flex-1">
-            <label for="Mme" class="font-bold text-lg"
+            <label for="tele" class="font-bold text-lg"
               >Numéro de téléphone
             </label>
             <input

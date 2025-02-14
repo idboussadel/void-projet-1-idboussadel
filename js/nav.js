@@ -14,9 +14,9 @@ class SecondaryNav extends HTMLElement {
     this.innerHTML = `
           <nav class="main-nav flex justify-between max-md:py-2 items-center text-white max-md:border-b md:bg-blue-800 px-8 font-bold text-[14px] leading-[19.07px]">
               <ul class="flex gap-[32px] max-md:hidden">
-                  <li class="py-[15px] md:border-b-[5px] md:border-yellow-500"><a href="#">Particuliers</a></li>
-                  <li class="py-[15px]"><a href="#">Entreprises/Professionels</a></li>
-                  <li class="py-[15px]"><a href="#">Nous connaître</a></li>
+                  <li class="py-[15px] md:border-b-[5px] md:border-yellow-500"><a href="#.">Particuliers</a></li>
+                  <li class="py-[15px]"><a href="#.">Entreprises/Professionels</a></li>
+                  <li class="py-[15px]"><a href="#.">Nous connaître</a></li>
               </ul>
   
               <img id="menu-btn" src="./assets/menu.svg" class="cursor-pointer hover:opacity-80 md:hidden h-[24px] w-[24px]" alt="menu icon"/>
@@ -50,9 +50,9 @@ class MainNav extends HTMLElement {
                   <li>
                   <li><drop-down btnId=${dropDownitems[0].btnName} btnName=${dropDownitems[0].btnName} dropdownElements=${dropDownitems[0].dropdownElements}></drop-down></li>
                   </li>
-                  <li>Habitation</li>
-                  <li>santé et prévoyance</li>
-                  <li>Épargne</li>
+                  <li><a href="#.">Habitation</a></li>
+                  <li><a href="#.">santé et prévoyance</a></li>
+                  <li><a href="#.">Épargne</a></li>
                   <li><drop-down btnId=${dropDownitems[1].btnName} btnName=${dropDownitems[1].btnName} dropdownElements=${dropDownitems[1].dropdownElements}></drop-down></li>
               </ul>
           </nav>
@@ -66,17 +66,17 @@ class MenuMobile extends HTMLElement {
         <div id="menu-mobile" class="absolute fixed top-[57px] bg-white md:hidden z-10 h-[100vh] w-full transition-transform duration-200 ease transform translate-x-[-100%]">
           <ul class="flex flex-col">
             <li class="px-[20px] py-[30px] text-white border-b bg-blue-800 border-b-gray-500 border-l-[5px] border-yellow-500"><a href="#">Particuliers</a></li>
-            <li class="px-[20px] py-[30px] text-white border-b bg-blue-800 border-gray-500"><a href="#">Entreprises/Professionels</a></li>
-            <li class="px-[20px] py-[30px] text-white border-b bg-blue-800 border-gray-500"><a href="#">Nous connaître</a></li>
+            <li class="px-[20px] py-[30px] text-white border-b bg-blue-800 border-gray-500"><a href="#.">Entreprises/Professionels</a></li>
+            <li class="px-[20px] py-[30px] text-white border-b bg-blue-800 border-gray-500"><a href="#.">Nous connaître</a></li>
             <li class="px-[20px] py-[30px] border-b border-b-gray-500">
               <button aria-expanded="false" aria-controls="dropdown" class="flex items-center justify-between">
                 <span>Automobile</span>
                 <img src="./assets/downArrow.svg" alt="Toggle dropdown" class="h-[24px] w-[24px]" />
               </button>
             </li>
-            <li class="px-[20px] py-[30px] border-b border-b-gray-500">Habitation</li>
-            <li class="px-[20px] py-[30px] border-b border-b-gray-500">santé et prévoyance</li>
-            <li class="px-[20px] py-[30px] border-b border-b-gray-500">Épargne</li>
+            <li class="px-[20px] py-[30px] border-b border-b-gray-500"><a href="#.">Habitation</a></li>
+            <li class="px-[20px] py-[30px] border-b border-b-gray-500"><a href="#.">santé et prévoyance</a></li>
+            <li class="px-[20px] py-[30px] border-b border-b-gray-500"><a href="#.">Épargne</a></li>
             <li class="px-[20px] py-[30px] border-b border-b-gray-500">
               <button aria-expanded="false" aria-controls="dropdown" class="flex items-center gap-[9px]">
                   <span>Conseils et prévention</span>

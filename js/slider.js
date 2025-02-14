@@ -120,7 +120,7 @@ function createSliderContent(imageSrc, title, description, link) {
           <p class="text-sm">${description}</p>
           <div class="flex gap-2 items-center">
             <a href="${link}" class="text-blue-500">En savoir plus</a>
-            <img src="./assets/rightArrowLight.svg" alt="Right arrow icon" loading="lazy" class="h-[16px] w-[16px] mt-1" />
+            <img src="./assets/rightArrowLight.svg" alt="Right arrow icon" loading="lazy" width={16} height={16} class="h-[16px] w-[16px] mt-1" />
           </div>
         </div>
       </div>`,

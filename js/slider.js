@@ -63,7 +63,8 @@ class CustomCarousel {
     }
 
     const carousel = document.createElement("div");
-    carousel.className = "flex gap-[20px] mx-auto max-w-[75rem] items-center";
+    carousel.className =
+      "flex gap-[20px] px-2 mx-auto overflow-hidden items-center";
 
     const carouselItems = carouselData.map((item) =>
       createSliderContent(
@@ -75,7 +76,7 @@ class CustomCarousel {
     );
 
     carousel.innerHTML = `
-        <button aria-label="Previous slide" id="carrouselLeft" >
+        <button class="max-md:hidden" aria-label="Previous slide" id="carrouselLeft" >
            <img src="./assets/cercle-arrow.svg" alt="Previous arrow" class="slider-arrow" style="transform: rotate(180deg);" />
         </button>        
           <div id="carrouselContainer" class="flex gap-4 overflow-x-auto scroll-smooth px-6 py-6">
@@ -90,7 +91,7 @@ class CustomCarousel {
             )
             .join("")}
         </div>
-          <button id="carrouselRight" aria-label="Next slide">
+          <button class="max-md:hidden" id="carrouselRight" aria-label="Next slide">
             <img src="./assets/cercle-arrow.svg" alt="Next arrow" class="slider-arrow"/>
           </button>
     `;
@@ -114,6 +115,18 @@ class CustomCarousel {
       this.container.style.scrollBehavior = "smooth";
       this.container.scrollLeft -= 300;
     });
+
+    setInterval(() => {
+      this.container.style.scrollBehavior = "smooth";
+      this.container.scrollLeft += 300;
+
+      if (
+        this.container.scrollLeft >=
+        this.container.scrollWidth - this.container.offsetWidth
+      ) {
+        this.container.scrollLeft = 0;
+      }
+    }, 3000);
   }
 }
 
@@ -135,6 +148,6 @@ function createSliderContent(imageSrc, title, description, link) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const offresSection = document.getElementById("offres-section");
-  new CustomCarousel(offresSection, carouselData);
+  const carousel = document.getElementById("carousel");
+  new CustomCarousel(carousel, carouselData);
 });

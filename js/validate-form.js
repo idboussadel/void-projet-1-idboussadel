@@ -48,7 +48,6 @@ const submitContact = (e) => {
     "^[A-Za-zÀ-ÿs]+$",
     "Prenom is required"
   );
-  console.log(isValid);
 
   isValid &= validate(
     inputEmail.value,

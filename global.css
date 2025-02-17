@@ -17,13 +17,14 @@ body {
   height: 32px;
 }
 
-#carrouselContainer::-webkit-scrollbar {
-  display: none;
+.carrouselContainer {
+  overflow-x: auto; /* Keeps horizontal scrolling */
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer and Edge */
 }
 
-#carrouselContainer {
-  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer */
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+.carrouselContainer::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in Chrome, Safari, and Opera */
 }
 
 .fade-in-top,
